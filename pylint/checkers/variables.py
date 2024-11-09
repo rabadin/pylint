@@ -1354,7 +1354,7 @@ class VariablesChecker(BaseChecker):
     def leave_for(self, node: nodes.For) -> None:
         self._store_type_annotation_names(node)
 
-    def visit_module(self, node: nodes.Module) -> None:
+    def visit_module_z(self, node: nodes.Module) -> None:
         """Visit module : update consumption analysis variable
         checks globals doesn't overrides builtins.
         """

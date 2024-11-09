@@ -25,7 +25,7 @@ class TestVariablesChecker(CheckerTestCase):
         node.value.elts.append(astroid.Const("test"))
         root = node.root()
         with self.assertNoMessages():
-            self.checker.visit_module(root)
+            self.checker.visit_module_z(root)
             self.checker.leave_module(root)
 
 
@@ -123,7 +123,7 @@ class TestVariablesCheckerWithTearDown(CheckerTestCase):
                 end_col_offset=32,
             )
         ):
-            self.checker.visit_module(node)
+            self.checker.visit_module_z(node)
 
     @set_config(redefining_builtins_modules=("os",))
     def test_redefined_builtin_in_function(self) -> None:
@@ -134,7 +134,7 @@ class TestVariablesCheckerWithTearDown(CheckerTestCase):
         """
         )
         with self.assertNoMessages():
-            self.checker.visit_module(node.root())
+            self.checker.visit_module_z(node.root())
             self.checker.visit_functiondef(node)
 
     def test_import_as_underscore(self) -> None:

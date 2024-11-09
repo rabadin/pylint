@@ -36,7 +36,7 @@ class DocStringStyleChecker(checkers.BaseChecker):
     }
 
     @only_required_for_messages("docstring-first-line-empty", "bad-docstring-quotes")
-    def visit_module(self, node: nodes.Module) -> None:
+    def visit_module_z(self, node: nodes.Module) -> None:
         self._check_docstring("module", node)
 
     def visit_classdef(self, node: nodes.ClassDef) -> None:

@@ -522,7 +522,7 @@ class ImportsChecker(DeprecatedMixin, BaseChecker):
                 all_deprecated_modules = all_deprecated_modules.union(mod_set)
         return all_deprecated_modules
 
-    def visit_module(self, node: nodes.Module) -> None:
+    def visit_module_z(self, node: nodes.Module) -> None:
         """Store if current module is a package, i.e. an __init__ file."""
         self._current_module_package = node.package
 

@@ -412,7 +412,7 @@ class BasicChecker(_BasicChecker):
                 maybe_generator_call = lookup_result[1][0].parent.value
         return emit, maybe_generator_call
 
-    def visit_module(self, _: nodes.Module) -> None:
+    def visit_module_z(self, _: nodes.Module) -> None:
         """Check module name, docstring and required arguments."""
         self.linter.stats.node_count["module"] += 1
 

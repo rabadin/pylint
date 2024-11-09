@@ -28,7 +28,7 @@ class TestASTWalker:
             self.called: set[str] = set()
 
         @only_required_for_messages("first-message")
-        def visit_module(
+        def visit_module_z(
             self, module: nodes.Module  # pylint: disable=unused-argument
         ) -> None:
             self.called.add("module")

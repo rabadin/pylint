@@ -437,7 +437,7 @@ class SpellingChecker(BaseTokenChecker):
                 self._check_spelling("wrong-spelling-in-comment", token, start_row)
 
     @only_required_for_messages("wrong-spelling-in-docstring")
-    def visit_module(self, node: nodes.Module) -> None:
+    def visit_module_z(self, node: nodes.Module) -> None:
         self._check_docstring(node)
 
     @only_required_for_messages("wrong-spelling-in-docstring")

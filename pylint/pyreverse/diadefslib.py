@@ -158,7 +158,7 @@ class DefaultDiadefGenerator(LocalsVisitor, DiaDefGenerator):
             return self.pkgdiagram, self.classdiagram
         return (self.classdiagram,)
 
-    def visit_module(self, node: nodes.Module) -> None:
+    def visit_module_z(self, node: nodes.Module) -> None:
         """Visit an astroid.Module node.
 
         add this class to the package diagram definition

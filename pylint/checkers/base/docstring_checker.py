@@ -104,7 +104,7 @@ class DocStringChecker(_BasicChecker):
         self.linter.stats.reset_undocumented()
 
     @utils.only_required_for_messages("missing-module-docstring", "empty-docstring")
-    def visit_module(self, node: nodes.Module) -> None:
+    def visit_module_z(self, node: nodes.Module) -> None:
         self._check_docstring("module", node)
 
     @utils.only_required_for_messages("missing-class-docstring", "empty-docstring")

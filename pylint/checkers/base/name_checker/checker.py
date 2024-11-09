@@ -327,7 +327,7 @@ class NameChecker(_BasicChecker):
         return regexps, hints
 
     @utils.only_required_for_messages("disallowed-name", "invalid-name")
-    def visit_module(self, node: nodes.Module) -> None:
+    def visit_module_z(self, node: nodes.Module) -> None:
         self._check_name("module", node.name.split(".")[-1], node)
         self._bad_names = {}
 

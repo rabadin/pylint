@@ -134,7 +134,7 @@ class Linker(IdGeneratorMixIn, utils.LocalsVisitor):
         for module in node.modules:
             self.visit(module)
 
-    def visit_module(self, node: nodes.Module) -> None:
+    def visit_module_z(self, node: nodes.Module) -> None:
         """Visit an astroid.Module node.
 
         * set the locals_type mapping
@@ -212,7 +212,7 @@ class Linker(IdGeneratorMixIn, utils.LocalsVisitor):
             elif isinstance(frame, nodes.FunctionDef):
                 self.visit_functiondef(frame)
             else:
-                self.visit_module(frame)
+                self.visit_module_z(frame)
 
         current = frame.locals_type[node.name]
         frame.locals_type[node.name] = list(set(current) | utils.infer_node(node))

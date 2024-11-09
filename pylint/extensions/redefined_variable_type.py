@@ -49,7 +49,7 @@ class MultipleTypesChecker(BaseChecker):
     visit_functiondef = visit_asyncfunctiondef = visit_classdef
     leave_functiondef = leave_asyncfunctiondef = leave_module = leave_classdef
 
-    def visit_module(self, _: nodes.Module) -> None:
+    def visit_module_z(self, _: nodes.Module) -> None:
         self._assigns: list[dict[str, list[tuple[nodes.Assign, str]]]] = [{}]
 
     def _check_and_add_messages(self) -> None:
